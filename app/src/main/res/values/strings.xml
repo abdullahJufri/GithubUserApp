@@ -4,6 +4,7 @@
     <string name="user_name">username</string>
     <string name="username">username</string>
     <string name="location">Location</string>
+    <string name="company">Company</string>
 
 
     <string-array name="username">

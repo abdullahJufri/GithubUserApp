@@ -20,11 +20,15 @@ class DetailUserActivity : AppCompatActivity() {
         val tvdetailname:TextView = findViewById(R.id.tv_detail_name)
         val tvdetailusername:TextView = findViewById(R.id.tv_detail_username)
         val imgdetailavatar:ImageView = findViewById(R.id.img_detail_avatar)
+        val tvdetailcompany:TextView = findViewById(R.id.tv_detail_company)
+        val tvdetaillocation:TextView = findViewById(R.id.tv_detail_location)
 
         val user = intent.getParcelableExtra(EXTRA_USER) as User?
         tvdetailname.text = user!!.name
         tvdetailusername.text = user.username
         imgdetailavatar.setImageResource(user.avatar!!)
+        tvdetailcompany.text = user.company
+        tvdetaillocation.text = user.location
 
 
     }
