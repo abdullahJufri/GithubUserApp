@@ -23,7 +23,9 @@ class ListUserAdapter(private val listUser: ArrayList<User>) : RecyclerView.Adap
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val (name, username, location, avatar) = listUser[position]
-        holder.imgAvatar.setImageResource(avatar)
+        if (avatar != null) {
+            holder.imgAvatar.setImageResource(avatar)
+        }
         holder.tvName.text = name
         holder.tvLocation.text = location
         holder.tvUsername.text = username

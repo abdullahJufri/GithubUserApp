@@ -3,8 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/GithubUserApp/app/src/main/res/layout/activity_detail_user.xml" value="0.2" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/GithubUserApp/app/src/main/res/layout/activity_main.xml" value="0.2453125" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/GithubUserApp/app/src/main/res/layout/item_row_user.xml" value="0.3408360128617363" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/GithubUserApp/app/src/main/res/layout/item_row_user.xml" value="0.264" />
       </map>
     </option>
   </component>

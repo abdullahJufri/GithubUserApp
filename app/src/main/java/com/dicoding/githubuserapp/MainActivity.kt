@@ -1,5 +1,6 @@
 package com.dicoding.githubuserapp
 
+import android.content.Intent
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -55,5 +56,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun showSelectedUser(user: User) {
         Toast.makeText(this, "Kamu memilih " + user.name, Toast.LENGTH_SHORT).show()
+        val moveWithDataIntent = Intent(this@MainActivity, DetailUserActivity::class.java)
+        moveWithDataIntent.putExtra(DetailUserActivity.EXTRA_USER,user)
+        startActivity(moveWithDataIntent)
     }
+
+
 }
