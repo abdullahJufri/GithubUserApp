@@ -9,7 +9,12 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 class ListUserAdapter(private val listUser: ArrayList<User>) : RecyclerView.Adapter<ListUserAdapter.ListViewHolder>() {
+    private lateinit var onItemClickCallback: OnItemClickCallback
 
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ListViewHolder {
         val view: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.item_row_user, viewGroup, false)
@@ -22,11 +27,9 @@ class ListUserAdapter(private val listUser: ArrayList<User>) : RecyclerView.Adap
         holder.tvName.text = name
         holder.tvLocation.text = location
         holder.tvUsername.text = username
-        holder.itemView.setOnClickListener {
-            Toast.makeText(holder.itemView.context, "Kamu memilih " + listUser[holder.adapterPosition].name, Toast.LENGTH_SHORT).show()
-        }
-
+        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listUser[holder.adapterPosition]) }
     }
+
 
     override fun getItemCount(): Int = listUser.size
 
@@ -38,5 +41,7 @@ class ListUserAdapter(private val listUser: ArrayList<User>) : RecyclerView.Adap
 
 
     }
-
+    interface OnItemClickCallback {
+        fun onItemClicked(data: User)
+    }
 }
