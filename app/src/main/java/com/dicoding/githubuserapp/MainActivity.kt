@@ -1,8 +1,10 @@
 package com.dicoding.githubuserapp
 
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -36,7 +38,11 @@ class MainActivity : AppCompatActivity() {
             return listHero
         }
     private fun showRecyclerList() {
-        rvUsers.layoutManager = LinearLayoutManager(this)
+        if (applicationContext.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            rvUsers.layoutManager = GridLayoutManager(this, 2)
+        } else {
+            rvUsers.layoutManager = LinearLayoutManager(this)
+        }
         val listHeroAdapter = ListUserAdapter(list)
         rvUsers.adapter = listHeroAdapter
 
