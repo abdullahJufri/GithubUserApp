@@ -24,28 +24,25 @@
 
     <TextView
         android:id="@+id/tv_detail_name"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
         android:text="@string/name"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/img_detail_avatar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/img_detail_avatar" />
 
     <TextView
         android:id="@+id/tv_detail_username"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:text="@string/username"
+        android:text="@string/user_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/img_detail_avatar"
@@ -66,41 +63,124 @@
 
     <TextView
         android:id="@+id/tv_detail_company"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="@string/company"
         app:layout_constraintBottom_toBottomOf="@+id/imageView_company"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView_company"
-        app:layout_constraintTop_toBottomOf="@+id/img_detail_avatar" />
+        app:layout_constraintTop_toTopOf="@+id/imageView_company" />
 
     <ImageView
         android:id="@+id/imageView_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_detail_location"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_detail_company"
-        app:layout_constraintTop_toBottomOf="@+id/img_detail_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_company"
         app:srcCompat="@drawable/ic_outline_location_on_24" />
 
     <TextView
         android:id="@+id/tv_detail_location"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:text="@string/location"
         app:layout_constraintBottom_toBottomOf="@+id/imageView_location"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView_location"
-        app:layout_constraintTop_toBottomOf="@+id/img_detail_avatar" />
+        app:layout_constraintTop_toTopOf="@+id/imageView_location"
+        app:layout_constraintVertical_bias="0.53" />
+
+    <ImageView
+        android:id="@+id/imageView_Follower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_location"
+        app:srcCompat="@drawable/ic_outline_person_outline_24" />
+
+    <TextView
+        android:id="@+id/tv_detail_follower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/follower"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_Follower"
+        app:layout_constraintStart_toEndOf="@+id/imageView_Follower"
+        app:layout_constraintTop_toTopOf="@+id/imageView_Follower" />
+
+    <TextView
+        android:id="@+id/Text_Follwers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/follower"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_Follower"
+        app:layout_constraintStart_toEndOf="@+id/tv_detail_follower"
+        app:layout_constraintTop_toTopOf="@+id/imageView_Follower" />
+
+    <ImageView
+        android:id="@+id/imageView_dot"
+        android:layout_width="6dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_Follower"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/Text_Follwers"
+        app:layout_constraintTop_toTopOf="@+id/imageView_Follower"
+        app:srcCompat="@drawable/ic_baseline_circle_10" />
+
+    <TextView
+        android:id="@+id/tv_detail_following"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/following"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_Follower"
+        app:layout_constraintStart_toEndOf="@+id/imageView_dot"
+        app:layout_constraintTop_toTopOf="@+id/imageView_Follower" />
+
+    <TextView
+        android:id="@+id/Following"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/following"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_detail_following"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_detail_following"
+        app:layout_constraintTop_toTopOf="@+id/tv_detail_following" />
+
+    <TextView
+        android:id="@+id/tv_detail_repository"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/repository"
+        app:layout_constraintBottom_toBottomOf="@+id/img_detail_avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toEndOf="@+id/img_detail_avatar"
+        app:layout_constraintTop_toBottomOf="@+id/tv_detail_username"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

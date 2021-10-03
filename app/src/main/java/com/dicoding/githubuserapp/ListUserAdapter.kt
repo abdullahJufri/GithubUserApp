@@ -7,6 +7,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.dicoding.githubuserapp.databinding.ActivityDetailUserBinding
+import com.dicoding.githubuserapp.databinding.ItemRowUserBinding
 
 class ListUserAdapter(private val listUser: ArrayList<User>) : RecyclerView.Adapter<ListUserAdapter.ListViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
@@ -17,32 +19,26 @@ class ListUserAdapter(private val listUser: ArrayList<User>) : RecyclerView.Adap
     }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ListViewHolder {
-        val view: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.item_row_user, viewGroup, false)
-        return ListViewHolder(view)
+        val binding = ItemRowUserBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
+        return ListViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val (name, username, location, avatar) = listUser[position]
-        if (avatar != null) {
-            holder.imgAvatar.setImageResource(avatar)
+        holder.binding.tvItemName.text = name
+        holder.binding.tvItemUsername.text = username
+        holder.binding.tvItemLocation.text = location
+        holder.binding.imgItemAvatar.setImageResource(avatar!!)
+        holder.itemView.setOnClickListener {
+            onItemClickCallback.onItemClicked(listUser[holder.adapterPosition])
         }
-        holder.tvName.text = name
-        holder.tvLocation.text = location
-        holder.tvUsername.text = username
-        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listUser[holder.adapterPosition]) }
     }
 
 
     override fun getItemCount(): Int = listUser.size
 
-    class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var imgAvatar: ImageView = itemView.findViewById(R.id.img_item_avatar)
-        var tvName: TextView = itemView.findViewById(R.id.tv_item_name)
-        var tvLocation: TextView = itemView.findViewById(R.id.tv_item_location)
-        var tvUsername: TextView = itemView.findViewById(R.id.tv_item_username)
+    class ListViewHolder(var binding: ItemRowUserBinding) : RecyclerView.ViewHolder(binding.root)
 
-
-    }
     interface OnItemClickCallback {
         fun onItemClicked(data: User)
     }

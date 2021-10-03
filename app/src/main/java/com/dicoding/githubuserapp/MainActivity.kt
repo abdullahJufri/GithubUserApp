@@ -8,8 +8,10 @@ import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.dicoding.githubuserapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
     private lateinit var rvUsers: RecyclerView
     private val list = ArrayList<User>()
 
@@ -17,7 +19,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        rvUsers = findViewById(R.id.rv_users)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        rvUsers= binding.rvUsers
         rvUsers.setHasFixedSize(true)
 
         list.addAll(listUsers)
@@ -30,13 +35,18 @@ class MainActivity : AppCompatActivity() {
             val dataUsername = resources.getStringArray(R.array.username)
             val dataLocation = resources.getStringArray(R.array.location)
             val dataAvatar = resources.obtainTypedArray(R.array.avatar)
+            val dataRepository = resources.getStringArray(R.array.repository)
+            val dataCompany = resources.getStringArray(R.array.company)
+            val dataFollower = resources.getStringArray(R.array.followers)
+            val dataFollowing = resources.getStringArray(R.array.following)
 
-            val listHero = ArrayList<User>()
+
+            val listUser = ArrayList<User>()
             for (i in dataName.indices) {
-                val hero = User(dataName[i],dataUsername[i], dataLocation[i], dataAvatar.getResourceId(i, -1))
-                listHero.add(hero)
+                val user = User(dataName[i],dataUsername[i], dataLocation[i],  dataAvatar.getResourceId(i, -1), dataRepository[i], dataCompany[i], dataFollower[i], dataFollowing[i])
+                listUser.add(user)
             }
-            return listHero
+            return listUser
         }
     private fun showRecyclerList() {
         if (applicationContext.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
@@ -55,7 +65,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showSelectedUser(user: User) {
-        Toast.makeText(this, "Kamu memilih " + user.name, Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, user.name, Toast.LENGTH_SHORT).show()
         val moveWithDataIntent = Intent(this@MainActivity, DetailUserActivity::class.java)
         moveWithDataIntent.putExtra(DetailUserActivity.EXTRA_USER,user)
         startActivity(moveWithDataIntent)

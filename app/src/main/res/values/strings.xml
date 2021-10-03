@@ -1,10 +1,13 @@
 <resources>
     <string name="app_name">GithubUserApp</string>
-    <string name="name">nama</string>
-    <string name="user_name">username</string>
-    <string name="username">username</string>
+    <string name="name">Name</string>
+    <string name="user_name">Username</string>
+<!--    <string name="username">Username</string>-->
     <string name="location">Location</string>
     <string name="company">Company</string>
+    <string name="follower">Followers</string>
+    <string name="following">Following</string>
+    <string name="repository">%s Repository</string>
 
 
     <string-array name="username">

@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import com.dicoding.githubuserapp.databinding.ActivityDetailUserBinding
+
 
 class DetailUserActivity : AppCompatActivity() {
 
@@ -12,24 +14,24 @@ class DetailUserActivity : AppCompatActivity() {
 
     }
 
+    private lateinit var binding: ActivityDetailUserBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_user)
 
-        val tvdetailname:TextView = findViewById(R.id.tv_detail_name)
-        val tvdetailusername:TextView = findViewById(R.id.tv_detail_username)
-        val imgdetailavatar:ImageView = findViewById(R.id.img_detail_avatar)
-        val tvdetailcompany:TextView = findViewById(R.id.tv_detail_company)
-        val tvdetaillocation:TextView = findViewById(R.id.tv_detail_location)
+        binding = ActivityDetailUserBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val user = intent.getParcelableExtra(EXTRA_USER) as User?
-        tvdetailname.text = user!!.name
-        tvdetailusername.text = user.username
-        imgdetailavatar.setImageResource(user.avatar!!)
-        tvdetailcompany.text = user.company
-        tvdetaillocation.text = user.location
-
-
+        binding.tvDetailName.text = user!!.name
+        binding.tvDetailUsername.text = user.username
+        binding.imgDetailAvatar.setImageResource(user.avatar!!)
+        binding.tvDetailCompany.text = user.company
+        binding.tvDetailLocation.text = user.location
+        binding.tvDetailFollower.text = user.followers
+        binding.tvDetailFollowing.text = user.following
+        binding.tvDetailRepository.text = getString(R.string.repository, user.repository)
     }
 }
