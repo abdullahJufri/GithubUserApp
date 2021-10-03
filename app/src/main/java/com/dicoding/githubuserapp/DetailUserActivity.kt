@@ -20,6 +20,7 @@ class DetailUserActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_user)
+        supportActionBar?.title = "Detail User"
 
         binding = ActivityDetailUserBinding.inflate(layoutInflater)
         setContentView(binding.root)

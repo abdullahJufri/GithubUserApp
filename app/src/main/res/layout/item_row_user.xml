@@ -32,14 +32,10 @@
 
         <TextView
             android:id="@+id/tv_item_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/TextContent.Title"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_toEndOf="@id/img_item_avatar"
-            android:textColor="@color/gray_1"
-            android:textSize="16sp"
-            android:textStyle="bold"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toEndOf="@+id/img_item_avatar"
             card_view:layout_constraintTop_toTopOf="@+id/img_item_avatar"
@@ -47,13 +43,11 @@
 
         <TextView
             android:id="@+id/tv_item_username"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/TextContent.Subtitle.Small"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:ellipsize="end"
-            android:textSize="14sp"
             card_view:layout_constraintBottom_toBottomOf="@+id/img_item_avatar"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toEndOf="@+id/img_item_avatar"
@@ -78,12 +72,10 @@
 
         <TextView
             android:id="@+id/tv_item_location"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/TextContent.Subtitle.Small"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="16dp"
             android:text="@string/location"
-            android:textSize="14sp"
             card_view:layout_constraintBottom_toBottomOf="@+id/imageView"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintHorizontal_bias="0.0"

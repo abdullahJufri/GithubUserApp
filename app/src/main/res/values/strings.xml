@@ -2,12 +2,13 @@
     <string name="app_name">GithubUserApp</string>
     <string name="name">Name</string>
     <string name="user_name">Username</string>
-<!--    <string name="username">Username</string>-->
+    <!--    <string name="username">Username</string>-->
     <string name="location">Location</string>
     <string name="company">Company</string>
     <string name="follower">Followers</string>
     <string name="following">Following</string>
     <string name="repository">%s Repository</string>
+    <string name="number">1234</string>
 
 
     <string-array name="username">
@@ -113,5 +114,8 @@
         <item>@drawable/user9</item>
         <item>@drawable/user10</item>
     </string-array>
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 
 </resources>
