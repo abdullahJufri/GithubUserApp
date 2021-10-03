@@ -41,7 +41,6 @@ class MainActivity : AppCompatActivity() {
             val dataFollower = resources.getStringArray(R.array.followers)
             val dataFollowing = resources.getStringArray(R.array.following)
 
-
             val listUser = ArrayList<User>()
             for (i in dataName.indices) {
                 val user = User(dataName[i],dataUsername[i], dataLocation[i],  dataAvatar.getResourceId(i, -1), dataRepository[i], dataCompany[i], dataFollower[i], dataFollowing[i])
@@ -49,6 +48,7 @@ class MainActivity : AppCompatActivity() {
             }
             return listUser
         }
+
     private fun showRecyclerList() {
         if (applicationContext.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             rvUsers.layoutManager = GridLayoutManager(this, 2)

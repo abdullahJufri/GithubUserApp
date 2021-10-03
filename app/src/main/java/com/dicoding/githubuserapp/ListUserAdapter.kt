@@ -34,7 +34,6 @@ class ListUserAdapter(private val listUser: ArrayList<User>) : RecyclerView.Adap
         }
     }
 
-
     override fun getItemCount(): Int = listUser.size
 
     class ListViewHolder(var binding: ItemRowUserBinding) : RecyclerView.ViewHolder(binding.root)
